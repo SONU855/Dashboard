@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhuNaksha</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assests\css\style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Sidebar styles */
+        .body{
+            max-width: 1100px;
+            background: fixed;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100%;
+            background-color:darkcyan;
+        
+            position: fixed;
+            top: 0;
+            
+            transition: left 0.2s ease; /* Smooth transition */
+            padding-top: 60px;
+            z-index: 1000; /* Ensure it sits above other content */
+        }
+
+        .sidebar.visible {
+            left: 0; /* Move sidebar into view */
+        }
+
+        .sidebar a {
+          
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color:dimgray;
+        }
+
+        .main-content {
+            margin-left: 0;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.shifted {
+            margin-left: 200px;
+        }
+        .sidebar a {
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    padding: 5px; /* Adjust the padding as needed */
+    border: 1px solid whitesmoke; /* Adds a border around each menu item */
+    margin-bottom: 2px; /* Adds space between the items */
+    border-radius: 2px; /* Optional: Adds rounded corners */
+}
+
+
+
+.contact-details p {
+    font-size: 14px;
+    color: white;
+    margin: 5px 0; /* Adds space above and below each paragraph */
+    display: flex; /* Ensures icons and text are on the same line */
+    align-items: center; /* Vertically centers the icon and text */
+}
+
+.contact-details i {
+    margin-left: 80px; /* Adds 5px margin to the right of icons */
+    color: white; /* Ensures icons are white */
+}
+
+.contact-details a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px; /* Adds 2px space between the icon and the link text */
+}
+.fa-location-dot p{
+    margin-left: 3px;
+    background-color: transparent;
+}
+.contact-details p{
+    background-color: transparent; /* Removes the hover background color */
+    cursor: default; /* Optionally change the cursor to default */
+    font-size: 15px;
+}
+.fa-solid{
+    font-weight: 900;
+}
+.sidebar .collapse p:hover {
+    background-color: transparent; /* Remove background color on hover */
+    border: none; /* Remove border */
+}
+
+.sidebar .collapse p {
+    border: none; /* Remove border */
+    padding: 5px 0; /* Adjust padding if needed */
+}
+
+.collapse.contact-details p {
+    margin-bottom: 5px; /* Space between items */
+    display: flex;
+    align-items: center;
+    border: none; /* Ensure there's no border */
+}
+
+.collapse.contact-details p:hover {
+    background-color: transparent; /* Ensure no hover background */
+}
+.row {
+    display: flex;
+    justify-content: space-between; /* Ensures the cards are spaced out evenly */
+    gap: 20px; /* Adds space between the cards */
+    height: 100vh; /* Sets the row height to 100% of the viewport height */
+}
+
+.col-lg-4 {
+    border: 1px solid #ddd; /* Adds a border to each card */
+    padding: 20px; /* Adds padding inside the card */
+    border-radius: 8px; /* Rounds the corners of the cards */
+    background-color: #f8f9fa; /* Adds a light background color to the cards */
+    flex: 1; /* Ensures all cards take up equal space */
+    max-width: 30%; /* Ensures the cards don't grow too large */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+    height: 75vh; /* Sets the height of each card to 50% of the viewport height */
+}
+
+.col-lg-4 p {
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.col-lg-4 p:hover {
+    color: #007bff; /* Changes text color on hover */
+    transform: scale(1.05); /* Slightly enlarges the text on hover */
+}
+.container3{
+    background-color:darkgray;
+    align-items: center;
+    margin-bottom: auto;
+
+}
+.footer {
+    margin-top: 10px; /* Adjust this value as needed */
+   
+}
+.p{
+    margin-left: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="home.html"><i class="fa-solid fa-house" style="margin-right: 3px;"></i> Home</a>
+        <a href="index.html">
+            <i class="fa-solid fa-magnifying-glass-location" style="margin-right: 3px;"></i> Search
+          </a>
+          
+        <a href="#"><i class="fa-solid fa-circle-info" style="margin-right: 3px;"></i> About</a>
+        <a href="#contact" class="submenu-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="contact"><i class="fa-solid fa-address-book" style="margin-right: 3px;"></i> Contact</a>
+        <div id="contact" class="collapse contact-details">
+            <p><i class="fa-solid fa-phone" style="margin-right: 5px;"></i> <a href="tel:+123456789">+91---</a></p>
+            <p><i class="fa-solid fa-location-dot" style="margin-right: 7px;"></i> Vita, Maharashtra</p>
+
+        </div>
+        
+        <a href="login.html"><i class="fa-solid fa-user-tie" style="margin-right: 3px;"></i> Login <span class="sr-only">(current)</span></a>
+    </div>
+    
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button id="toggleSidebar" class="btn btn-dark border">
+                ☰
+            </button>
+            <a class="navbar-brand ml-3" href="home.html">BhuNaksha</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-user-tie" style="margin-right: 3px;"></i> Login <span class="sr-only">(current)</span></a>
+
+                    </li>
+                </ul>
+            </div>
+        
+        
+            <!--<div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Search</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>-->
+        </nav>
+        <!--carousel--->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="custom-img d-block w-100" src="https://img.freepik.com/free-photo/close-up-compass-north-america-map_23-2148232469.jpg?t=st=1724051685~exp=1724055285~hmac=f4e5ee68a0bdec0e2974f9245942780a9f5c2a0e1f646c9ad3b186e1cb04496c&w=996" alt="First slide">
+            </div>
+              <div class="carousel-item">
+                <img class="custom-img w-100" src="https://img.freepik.com/premium-photo/thief-planning-terrorism_53876-23535.jpg?w=740" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="custom-img w-100 " src="https://img.freepik.com/free-photo/flat-lay-travel-set-with-compass-maps_23-2149554722.jpg?t=st=1724083038~exp=1724086638~hmac=60f0c70cce86d326393b2517f074dbfd595a6ca2c6161b8f7060d74755f30e53&w=826" alt="Third slide">
+              </div>
+            
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          </div>
+          <div class="container1">
+            <h3>Here are some techniques that we use for <span class="gradient-text">surveying</span>...</h3>
+        </div>
+        <div class="container2 my-4">
+            <div class="row">
+              <!-- Card 1 -->
+              <div class="col-lg-3">
+                <div class="card1 text-center">
+                  <img class="rounded-circle mx-auto mt-3" src="https://img.freepik.com/free-vector/geodesy-isometric-composition-with-view-square-pit-characters-two-engineers-performing-some-measurements-vector-illustration_1284-67601.jpg?t=st=1724128608~exp=1724132208~hmac=7de2f34b6fc2c783d94b1576df236bac25d0c69ab99d305fa006995d9c424598&w=740" alt="Generic placeholder image">
+                  <h2>Distance Measurement</h2>
+               
+                  <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Surveying#Distance_measurement" role="button">View details &raquo;</a></p>
+                </div>
+              </div>
+          
+              <!-- Card 2 -->
+              <div class="col-lg-3">
+                <div class="card1 text-center">
+                  <img class="rounded-circle mx-auto mt-3" src="https://img.freepik.com/free-vector/foreman-plans-construction-work-with-team-surveyors-with-multiple-theodolites_1150-46753.jpg?t=st=1724132327~exp=1724135927~hmac=57ad6965def0f2a7e7ffb9a0c96b5393c942f6f60224713644e0efcad815226d&w=740" alt="Generic placeholder image">
+                  <h2>Angle Measurement</h2>
+                  <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Surveying#Angle_measurement" role="button">View details &raquo;</a></p>
+                 
+                </div>
+              </div>
+          
+              <!-- Card 3 -->
+              <div class="col-lg-3">
+                <div class="card1 text-center">
+                  <img class="rounded-circle mx-auto mt-3" src="https://img.freepik.com/free-vector/earth-sciences-geology-petrology-seismology-volcanology-isometric-composition-man-with-theodolite-tripod-performing-transit-survey-vector-illustration_1284-84856.jpg?t=st=1724132627~exp=1724136227~hmac=eec59009f8d7aedf92af9c08f599c944dc4b757d46f30fb5de63000e2583232f&w=740" alt="Generic placeholder image">
+                  <h2>Levelling</h2>
+                 
+                  <p><a class="btn btn-secondary" href="https://en.wikipedia.org/wiki/Surveying#Levelling" role="button">View details &raquo;</a></p>
+                </div>
+              </div>
+          
+              <!-- Card 4 -->
+              <div class="col-lg-3">
+                <div class="card1 text-center">
+                  <img class="rounded-circle mx-auto mt-3" src="https://img.freepik.com/free-vector/area-management-illustration_335657-4774.jpg?t=st=1724132728~exp=1724136328~hmac=8fae59bb23a1e29587d20c4fbd304e323651ab60f626db0ede714b1ac6a3445d&w=740" alt="Generic placeholder image">
+                  <h2>Determining Position</h2>
+                 
+                  <p><a class="btn btn-secondary " href="https://en.wikipedia.org/wiki/Surveying#Determining_position" role="button">View details &raquo;</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--footer-->
+          <footer class="container3">
+            <p class="float"><a href="#">Back to top</a></p>
+            <p>&copy; 2024-2025 Geo Eye IT Solutions, Pvt. Ltd. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </footer>
+        </main>
+    
+        <script>
+            $(document).ready(function () {
+                $('#toggleSidebar').click(function () {
+                    $('#sidebar').toggleClass('visible');
+                    $('#main-content').toggleClass('shifted');
+                });
+            });
+        </script>
+
+        <!---custom js-->
+        <script sc="assests\js\main.js"></script>
+        <div class="container3">
+            <div class="footer">
+
+            </div>
+
+        </div>
+</body>
+
+</html>
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BhuNaksha</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assests\css\style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            width: 200px;
+            height: 100%;
+            background-color:darkcyan;
+        
+            position: fixed;
+            top: 0;
+            
+            transition: left 0.2s ease; /* Smooth transition */
+            padding-top: 60px;
+            z-index: 1000; /* Ensure it sits above other content */
+        }
+
+        .sidebar.visible {
+            left: 0; /* Move sidebar into view */
+        }
+
+        .sidebar a {
+          
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color:dimgray;
+        }
+
+        .main-content {
+            margin-left: 0;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.shifted {
+            margin-left: 200px;
+        }
+        .sidebar a {
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    padding: 5px; /* Adjust the padding as needed */
+    border: 1px solid whitesmoke; /* Adds a border around each menu item */
+    margin-bottom: 2px; /* Adds space between the items */
+    border-radius: 2px; /* Optional: Adds rounded corners */
+}
+
+
+
+.contact-details p {
+    font-size: 14px;
+    color: white;
+    margin: 5px 0; /* Adds space above and below each paragraph */
+    display: flex; /* Ensures icons and text are on the same line */
+    align-items: center; /* Vertically centers the icon and text */
+}
+
+.contact-details i {
+    margin-left: 80px; /* Adds 5px margin to the right of icons */
+    color: white; /* Ensures icons are white */
+}
+
+.contact-details a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px; /* Adds 2px space between the icon and the link text */
+}
+.fa-location-dot p{
+    margin-left: 3px;
+    background-color: transparent;
+}
+.contact-details p{
+    background-color: transparent; /* Removes the hover background color */
+    cursor: default; /* Optionally change the cursor to default */
+    font-size: 15px;
+}
+.fa-solid{
+    font-weight: 900;
+}
+.sidebar .collapse p:hover {
+    background-color: transparent; /* Remove background color on hover */
+    border: none; /* Remove border */
+}
+
+.sidebar .collapse p {
+    border: none; /* Remove border */
+    padding: 5px 0; /* Adjust padding if needed */
+}
+
+.collapse.contact-details p {
+    margin-bottom: 5px; /* Space between items */
+    display: flex;
+    align-items: center;
+    border: none; /* Ensure there's no border */
+}
+
+.collapse.contact-details p:hover {
+    background-color: transparent; /* Ensure no hover background */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="home.html"><i class="fa-solid fa-house" style="margin-right: 3px;"></i> Home</a>
+        <a href="index.html">
+            <i class="fa-solid fa-magnifying-glass-location" style="margin-right: 3px;"></i> Search
+          </a>
+          
+        <a href="#"><i class="fa-solid fa-circle-info" style="margin-right: 3px;"></i> About</a>
+        <a href="#contact" class="submenu-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="contact"><i class="fa-solid fa-address-book" style="margin-right: 3px;"></i> Contact</a>
+        <div id="contact" class="collapse contact-details">
+            <p><i class="fa-solid fa-phone" style="margin-right: 5px;"></i> <a href="tel:+123456789">+91---</a></p>
+            <p><i class="fa-solid fa-location-dot" style="margin-right: 7px;"></i> Vita, Maharashtra</p>
+
+        </div>
+        
+        <a href="login.html"><i class="fa-solid fa-user-tie" style="margin-right: 3px;"></i> Login <span class="sr-only">(current)</span></a>
+    </div>
+    
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button id="toggleSidebar" class="btn btn-dark border">
+                ☰
+            </button>
+            <a class="navbar-brand ml-3" href="home.html">BhuNaksha</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-user-tie" style="margin-right: 3px;"></i> Login <span class="sr-only">(current)</span></a>
+
+                    </li>
+                </ul>
+            </div>
+        
+        
+            <!--<div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Search</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>-->
+        </nav>
+
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Search Location</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="location-form">
+                                <label for="state">State:</label>
+                                <select id="state" class="form-control">
+                                    <option value="maharashtra">Maharashtra</option>
+                                </select>
+
+                                <label for="category">Category:</label>
+                                <select id="category" class="form-control">
+                                    <option value="rural">Rural</option>
+                                    <option value="urban">Urban</option>
+                                </select>
+
+                                <label for="district">District:</label>
+                                <select id="district" class="form-control">
+                                    <option value="akoala">Sangli</option>
+                                </select>
+
+                                <label for="taluka">Taluka:</label>
+                                <select id="taluka" class="form-control">
+                                    <option value="akoat">Kadegaon</option>
+                                </select>
+
+                                <label for="village">Village:</label>
+                                <select id="village" class="form-control">
+                                    <option value="select">--Select--</option>
+                                    <option value="village1">Village 1</option>
+                                    <option value="village2">Village 2</option>
+                                </select>
+                            </div>
+
+                            <div class="search-form mt-4">
+                                <label for="search-plot">Search Plot No:</label>
+                                <input type="text" id="search-plot" class="form-control" placeholder="Enter Plot No...">
+                                <button type="submit" class="btn btn-success mt-2">Search</button>
+                            </div>
+
+                            <div class="search-form mt-4">
+                                <label for="select-plot">Select Plot No:</label>
+                                <select id="select-plot" class="form-control">
+                                    <option value="select">--Select--</option>
+                                    <option value="plot1">Plot 1</option>
+                                    <option value="plot2">Plot 2</option>
+                                </select>
+                            </div>
+                          
+
+                            <div class="search-form mt-4">
+                                <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#plotInfoModal">View Plot Info</button>
+                            </div>
+                          
+                                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plot Info Modal -->
+                <div class="modal fade" id="plotInfoModal" tabindex="-1" role="dialog"
+                    aria-labelledby="plotInfoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="plotInfoModalLabel">Plot Information</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Plot information will be dynamically added here -->
+                                <textarea id="plot-info" class="form-control" rows="5"
+                                    placeholder="Plot Information"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-4">
+                    <div class="card2">
+                        <div class="card-header">
+                            <h5>Second Card</h5>
+                        </div>
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="card3">
+                        <div class="card-header">
+                            <h5>Third Card</h5>
+                        </div>
+                        <div class="card-body">
+                           
+                        </div>-->
+                        <!--Map Div-->
+                    <div class="map"></div>
+
+                <script>
+                    $(document).ready(function () {
+                        $('#toggleSidebar').click(function () {
+                            $('#sidebar').toggleClass('visible');
+                            $('#main-content').toggleClass('shifted');
+                        });
+                    });
+                </script>
+
+                <!---custom js-->
+                <script sc="assests\js\main.js"></script>
+</body>
+
+</html>
